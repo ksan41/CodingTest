@@ -1,0 +1,75 @@
+package test.exam;
+
+public class main {
+
+	public static void main(String[] args) {
+		
+		Solution s = new Solution();
+		
+		//System.out.println(s.solution("zAZ", 4));
+		//System.out.println(s.solution(11));
+		System.out.println(s.solution("-1234"));
+	}
+
+}
+
+class Solution {
+    public int solution(String s) {
+        int answer = 0;
+        
+        switch(s.charAt(0)) {
+        case '-': s.replace("-", "");answer=Integer.parseInt(s);answer*=-1;break;
+        case '+': s.replace("+", "");answer=Integer.parseInt(s);break;
+        default: answer=Integer.parseInt(s);break;
+        }
+        
+        return answer;
+    }
+}
+
+
+
+//class Solution {
+//    public boolean solution(int x) {
+//        boolean answer = true;
+//        
+//        if(x>=10){
+//        	 String result = String.valueOf(x);
+//        	 String[] arr = result.split("");
+//        	 int h=0;
+//        	 for(int i=0;i<arr.length;i++) {
+//     			int sum = Integer.parseInt(arr[i]);
+//     			h+=sum;
+//     		}
+//        	 if(x%h == 0){
+//        		 return answer;
+//        	 }else {
+//        		 answer = false;
+//        	 }
+//        }
+//        
+//        
+//        
+//        return answer;
+//    }
+//}
+
+
+
+//class Solution {
+//	public String solution(String s, int n) {
+//		String answer = "";
+//		
+//		String[] arr = s.split("");
+//		for(int i=0;i<arr.length;i++) {
+//			int sum = arr[i].charAt(0) + n;
+//			if((sum>90&&sum<97)||(sum>122)) {
+//				sum-=26;
+//			}
+//			String result = String.valueOf(((char)sum));
+//			answer += result;
+//		}
+//		
+//		return answer;
+//	}
+//}
